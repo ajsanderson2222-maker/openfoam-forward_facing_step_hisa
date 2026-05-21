@@ -56,6 +56,8 @@ Three hex blocks:
 
 Base mesh: 36,576 cells. Two rounds of uniform refinement are applied near the step to resolve the shock structure (via `topoSet` + `refineMesh`).
 
+![Mesh](forwardStep/mesh.png)
+
 ---
 
 ## Fluid Model
@@ -210,7 +212,11 @@ Simulation converged to steady state. Final time step: t = 4.
 | Peak Mach (expansion) | ~3.80 |
 | Near-stagnation Mach | ~0.008 |
 
-### Flow features visible in Mach contours
+### Mach contours (t = 4)
+
+![Mach contours](forwardStep/mach_contours.png)
+
+### Flow features
 
 - **Bow shock** ahead of the step face: normal shock component, strong pressure rise
 - **Expansion fan** at the top-front corner of the step: Mach increases beyond freestream
