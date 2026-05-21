@@ -9,8 +9,8 @@ import os
 pv.OFF_SCREEN = True
 pv.global_theme.background = "white"
 
-case_dir = "/home/andrew/openfoam_jobs/forwardStep/simulation"
-out_dir = "/home/andrew/openfoam_jobs/forwardStep"
+case_dir = "/home/andrew/openfoam_jobs/openfoam-forwardStep/simulation"
+out_dir = "/home/andrew/openfoam_jobs/openfoam-forwardStep"
 
 # Find latest time directory (reconstructed)
 time_dirs = []

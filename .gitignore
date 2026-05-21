@@ -1,18 +1,27 @@
 # OpenFOAM time directories (keep 0.org and latest)
-forwardStep/simulation/[0-9]*/
-forwardStep/simulation/[0-9]*.[0-9]*/
-!forwardStep/simulation/0.org/
-!forwardStep/simulation/4/
+openfoam-forwardStep/simulation/[0-9]*/
+openfoam-forwardStep/simulation/[0-9]*.[0-9]*/
+!openfoam-forwardStep/simulation/0.org/
+!openfoam-forwardStep/simulation/4/
+
+openfoam-shockTube/simulation/[0-9]*/
+openfoam-shockTube/simulation/[0-9]*.[0-9]*/
+!openfoam-shockTube/simulation/0.org/
+!openfoam-shockTube/simulation/0.007/
 
 # Processor directories
-forwardStep/simulation/processor*/
+openfoam-forwardStep/simulation/processor*/
+openfoam-shockTube/simulation/processor*/
 
 # Large log files
-forwardStep/simulation/log.*
+openfoam-forwardStep/simulation/log.*
+openfoam-shockTube/simulation/log.*
 forwardStep_run.log
+shockTube_run.log
 
 # foamLog database
-forwardStep/simulation/foamLog.db.res
+openfoam-forwardStep/simulation/foamLog.db.res
+openfoam-shockTube/simulation/foamLog.db.res
 
 # Python venv
 .venv/

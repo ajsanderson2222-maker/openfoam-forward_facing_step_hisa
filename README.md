@@ -56,7 +56,7 @@ Three hex blocks:
 
 Base mesh: 36,576 cells. Two rounds of uniform refinement are applied near the step to resolve the shock structure (via `topoSet` + `refineMesh`).
 
-![Mesh](forwardStep/mesh.png)
+![Mesh](openfoam-forwardStep/mesh.png)
 
 ---
 
@@ -214,7 +214,7 @@ Simulation converged to steady state. Final time step: t = 4.
 
 ### Mach contours (t = 4)
 
-![Mach contours](forwardStep/mach_contours.png)
+![Mach contours](openfoam-forwardStep/mach_contours.png)
 
 ### Flow features
 
@@ -227,8 +227,8 @@ Simulation converged to steady state. Final time step: t = 4.
 
 | File | Description |
 |------|-------------|
-| `forwardStep/mesh.png` | Wireframe mesh (3200×1067, parallel projection) |
-| `forwardStep/mach_contours.png` | Mach number contours at t=4, coolwarm colormap, range 0–3.5 |
+| `openfoam-forwardStep/mesh.png` | Wireframe mesh (3200×1067, parallel projection) |
+| `openfoam-forwardStep/mach_contours.png` | Mach number contours at t=4, coolwarm colormap, range 0–3.5 |
 
 ---
 
@@ -242,7 +242,7 @@ source /opt/openfoam13/etc/bashrc
 export PATH=$PATH:$HOME/OpenFOAM/$(whoami)-13/platforms/linux64GccDPInt32Opt/bin
 
 # Run
-cd forwardStep
+cd openfoam-forwardStep
 bash runSim
 ```
 
@@ -259,10 +259,10 @@ Requires the project venv with pyvista + matplotlib:
 
 ```bash
 source .venv/bin/activate
-python forwardStep/plot_hisa.py
+python openfoam-forwardStep/plot_hisa.py
 ```
 
-Generates `mesh.png` and `mach_contours.png` in `forwardStep/`. Reads the reconstructed OpenFOAM case via pyvista's `OpenFOAMReader`. Mach computed from non-dimensionalised fields as:
+Generates `mesh.png` and `mach_contours.png` in `openfoam-forwardStep/`. Reads the reconstructed OpenFOAM case via pyvista's `OpenFOAMReader`. Mach computed from non-dimensionalised fields as:
 
 ```
 Mach = |U| / sqrt(γ · T)     (γ = 1.4, T in non-dim units)
