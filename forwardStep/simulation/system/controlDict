@@ -1,0 +1,50 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+|                                                                             |
+|    HiSA: High Speed Aerodynamic solver                                      |
+|    Copyright (C) 2014-2017 Johan Heyns - CSIR, South Africa                 |
+|    Copyright (C) 2014-2017 Oliver Oxtoby - CSIR, South Africa               |
+|                                                                             |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     hisa;
+
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         4;
+
+deltaT          0.005;
+
+writeControl    adjustableRunTime;
+
+writeInterval   0.1;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   8;
+
+runTimeModifiable true;
+
+adjustTimeStep  no;
+
+// ************************************************************************* //

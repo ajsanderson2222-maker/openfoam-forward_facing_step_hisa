@@ -1,0 +1,22 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "4/uniform";
+    object      pseudotimeState;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+initResiduals   0.00323484 ( 0.00511898 0.0028031 0 ) 0.00344599;
+
+firstResiduals  1 ( 1 8.26384e-18 0 ) 1;
+
+
+// ************************************************************************* //

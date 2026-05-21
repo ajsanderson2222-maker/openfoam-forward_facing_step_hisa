@@ -1,0 +1,37 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+|                                                                             |
+|    HiSA: High Speed Aerodynamic solver                                      |
+|    Copyright (C) 2014-2017 Johan Heyns - CSIR, South Africa                 |
+|    Copyright (C) 2014-2017 Oliver Oxtoby - CSIR, South Africa               |
+|                                                                             |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      refineMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+set             c0;
+
+coordinateSystem global;
+
+globalCoeffs
+{
+    tan1            ( 1 0 0 );
+    tan2            ( 0 1 0 );
+}
+
+directions      ( tan1 tan2 );
+
+useHexTopology  yes;
+
+geometricCut    no;
+
+writeMesh       no;
+
+
+// ************************************************************************* //

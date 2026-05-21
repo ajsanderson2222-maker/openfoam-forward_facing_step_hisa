@@ -1,0 +1,21 @@
+# OpenFOAM time directories (keep 0.org and latest)
+forwardStep/simulation/[0-9]*/
+forwardStep/simulation/[0-9]*.[0-9]*/
+!forwardStep/simulation/0.org/
+!forwardStep/simulation/4/
+
+# Processor directories
+forwardStep/simulation/processor*/
+
+# Large log files
+forwardStep/simulation/log.*
+forwardStep_run.log
+
+# foamLog database
+forwardStep/simulation/foamLog.db.res
+
+# Python venv
+.venv/
+
+# Build artifacts
+hisa/

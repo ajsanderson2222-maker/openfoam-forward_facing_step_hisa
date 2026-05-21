@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+set -e
+
+cd simulation
+
+refineMeshByCellSet()
+{
+   while [ $# -ge 1 ]
+   do
+      if [ ! -e log.refineMesh.$1 ]
+      then
+          echo "creating cell set for primary zone - $1"
+          cp system/topoSetDict.$1 system/topoSetDict
+          topoSet > log.topoSet.$1 2>&1
+
+          echo "refining primary zone - $1"
+          if [ -z "$FOAM_API" ]
+          then
+              refineMesh -dict system/refineMeshDict.foundation -overwrite > log.refineMesh.$1 2>&1
+          else
+              refineMesh -dict system/refineMeshDict.ocfd -overwrite > log.refineMesh.$1 2>&1
+          fi
+      fi
+      shift
+   done
+}
+
+runApplication blockMesh -dict system/blockMeshDict
+refineMeshByCellSet 1 2
+
+rm -rf 0
+cp -r 0.org 0
+
+# Parallel ............................
+runApplication decomposePar
+mpirun -n `getNumberOfProcessors` `getApplication` -parallel 2>&1 | tee log.hisa
+
+cd ..
